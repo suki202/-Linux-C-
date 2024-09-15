@@ -133,7 +133,14 @@ Only do the link operation, will. The o file is linked to generate the final exe
 
 **3**）**.Common compilation options**
 
- ![](D:\文件夹桌面\图片a\图片8.png)
+|  常用选项   |                        描述                        |
+| :---------: | :------------------------------------------------: |
+|     -E      | 预处理，开发过程中想快速确定某个宏可以使用“-E -dM” |
+|     -c      |       把预处理、编译、汇编都做了，但是不链接       |
+|     -o      |                    指定输出文件                    |
+| -I(i的大写) |                   指定头文件目录                   |
+|     -L      |                指定链接时库文件目录                |
+| -l(L的小写) |                指定链接哪一个库文件                |
 
 For example, use the “-I” parameter to specify the header file directory
 
