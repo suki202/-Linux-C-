@@ -34,7 +34,9 @@ Software: VirtualBox virtual machine, Ubuntu operating system.
 
 ① The C language development process under Linux.  
 
-② Use of the Vi and Vim editors.  ③ Use of the GCC compiler.  
+② Use of the Vi and Vim editors.  
+
+③ Use of the GCC compiler.  
 
 ④ Use of the GDB debugger.  
 
@@ -44,9 +46,9 @@ Software: VirtualBox virtual machine, Ubuntu operating system.
 
 ## 5. The Experimental Procedures of No
 
-#### **（**1**）** Development process of C language under Linux (refer to Section 2.1) 
+### （1）**Development process of C language under Linux (refer to Section 2.1)**
 
-① Start the virtual machine, enter the operating system, and then press the shortcut key“ Ctrl +  Alt + T ”to start the terminal.
+① Start the virtual machine, enter the operating system, and then press the shortcut key“ **Ctrl +  Alt + T** ”to start the terminal.
 
 ② Enter the root mode.  If you do not enter root mode before, enter the user password and set the new password for root  mode; if you have set root mode before, enter the command “`su root`” to enter.
 
@@ -62,38 +64,199 @@ As shown in Figure Figure 2-1
 
 ⑥ Install the build-essential: `sudo apt install build-essential`
 
-⑦ Use Vim to edit the source program, enter "`vi Hello.c`" in the terminal, start the Vi editor, and  enter the command-line mode.After starting, press the “i” key to enter the insertion mode. If the  "Insert" prompt appears on the lower left, the user can edit the text. Enter the `Hello.c `source code,  as shown in Figure Figure 2-2.
+⑦ Use Vim to edit the source program, enter "`vi Hello.c`" in the terminal, start the Vi editor, and  enter the command-line mode.After starting, press the “**i**” key to enter the insertion mode. If the  "Insert" prompt appears on the lower left, the user can edit the text. Enter the `Hello.c `source code,  as shown in Figure Figure 2-2.
 
 ![](assets/图片2.png)
 
-Finally, press Esc to convert the insertion mode to command line mode, and enter the command "`:  wq`" to exit. 
+Finally, press Esc to convert the insertion mode to command line mode, and enter the command "`:wq`" to exit. 
 
 ⑧ Compile the source code and enter the command "`gcc Hello.c-o Hello`" under the terminal for  compile. 
 
-⑨ Run the program, enter the command under the terminal "`. / Hello` " to run. As shown in Figures 2 – 3.
+⑨ Run the program, enter the command under the terminal "`./ Hello` " to run. As shown in Figures 2 – 3.
 
 ![](assets/图片3.png)
 
-#### **（2）The use of Vi, Vim editors (refer to Section 2.2)**
+### （2）**The use of Vi, Vim editors (refer to Section 2.2)**
 
-① Start and exit Vim, enter the command "`vim`" at the terminal to start. If you exit vim, press "Esc" to return to command line mode and then type "`: q`", and press "Enter" to exit.
+① Start and exit Vim, enter the command "`vim`" at the terminal to start. If you exit vim, press "**Esc**" to return to command line mode and then type "`:q`", and press "**Enter**" to exit.
 
-② Switching between 3 modes (command mode, edit mode, and bottom row mode), and the use of common commands in 3 modes. Command line mode common function keys are listed in Table 3-1. Base row mode common function keys are listed in Table 3-2. Complete the following operation exercises.
+② Switching between 3 modes (command mode, edit mode, and bottom row mode), and the use of common commands in 3 modes.  
 
-1) Create a directory named'/ Vi under the / root directory: `mkdir /Vi` 
+#### Common commands for the three modes are as follows:
 
-2) Enter the ` / Vi ` directory: `cd /Vi` 
-3) Copy the file "/ etc/systemd/system.conf" to the "/ Vi" directory: `cp /etc/systemd/system.conf /Vi/` 
-4) Open the system.conf file in the / Vi directory using Vim: `vim /Vi/system.conf` 
-5) Set the line number: `:set number` 
-6) Find a specific row or setting: Use “/” plus the string to search for, such as “ `/ DefaultLimitNOFILE=`” , and then press “Enter ”to  find specific settings. 
-7) Copy, paste, and move the cursor: In command line mode, copy the current line using “ `yy` ”, “ `p`” paste the copied content, “`G` ”  move to the end of the file, “`gg`” to the beginning of the file, “`0` ” to the beginning of the line, and  “`$`”to the end of the line. 
-8) Delete the current row: `dd` 
-9) Save the file but do not exit: `:w` 
-10) Insert Text: -In command line mode,  press “i ” to enter insert mode and then enter text. 
-11) Force to exit Vim without saving the changes: `:q!`
+#### (1) command mode
 
-#### （3）The use of the GCC editor
+##### 1. Run the cursor move command
+
+`h`：Move cursor left
+
+`j`：Move cursor down
+
+`k`：Move cursor up
+
+`l`：Move the cursor right
+
+`w`：Follow the word to move backwards in the line
+
+`b`：Follow the word to move forward in the line
+
+`shift + ^`：The cursor is positioned at the leftmost beginning of the current line  anchor
+
+`shift + $`：Locate the cursor at the rightmost end of the current line  anchor
+
+`gg`：Skip to top of file
+
+`shift + g`：Skip to the end of the file
+
+##### **2.** **Text editing command**
+
+`n + x`：Delete the character where the cursor is located. n indicates the number of characters to be deleted
+
+`n + X`：Delete the characters to the left of the cursor. n indicates the number, that is, the number of deleted characters
+
+`n + yy`：The current row is copied. n indicates the number, that is, the number of rows copied
+
+`n + p`：Paste Cut or copied text, n indicates the number, that is, the number of pasted text
+
+`n + dd`：Delete the current row. n indicates the number, that is, the number of deleted rows
+
+`u`：Undo edit operation
+
+`ctrl + r`：Undo the revocation
+
+`.`：Repeat previous operation
+
+`~`：Quick case switching
+
+**3.** **Find and replace command**
+
+`n + r`：Replace the character where the cursor is located. n indicates the number, that is, the number of replaced characters
+
+`R`：Enter replacement mode
+
+`#`：Highlight the function name you want to find
+
+`n`：The name of the next function/string found
+
+`/pattern`：Looks backward for the specified pattern
+
+`?pattern`：Look forward for the specified pattern
+
+`s/search/replace/g`：Replace the search content
+
+`s/search/replace/gc`：Replace the search, but confirm each replacement
+
+#### (2) insert mode
+
+In command mode, press `i` to enter the input mode, and use the **ESC** key to return to normal mode. In input mode, the following keys can be used:
+
+Character case and **shift** combination: Input character
+
+**ENTER**：Enter key, line feed
+
+**BACK SPACE**：The backspace key deletes the character before the cursor
+
+**DEL**：Delete key: Deletes the character after the cursor
+
+Arrow keys: Move the cursor in the text
+
+**HOME/END**：Move the cursor to the beginning/end of the line
+
+**PgUp/PgDn**：Page up/down
+
+**Inset**：Toggle cursor to input/replace mode, cursor becomes vertical/underline
+
+**ESC**: Exit the input mode and switch to the command mode
+
+#### (3) Bottom line pattern
+
+In the bottom line mode of Vim, various operations can be performed, such as saving files, searching files, replacing text, and so on. The following are some commonly used Vim bottom line mode commands and their functions:
+
+**1.** **Save and exit**
+
+`:w`：Save the file but exit
+
+`:w file name`: Saves the file as the specified file name
+
+`:q`：quit Vim
+
+`:q!`：Force exit without saving the changes
+
+`wq` 或` :x`：save & exit
+
+**2.** **Displays line numbers and mouse actions**
+
+`set number`：display line numbers
+
+`set nonumber`：Hidden line number
+
+`set mouse=a`：Set mouse action
+
+`set` option：set vim options，for example, set number indicates the row number
+
+**3.** **moving cursor**
+
+`n`：Jump to line n
+
+`$`：Jump to the end of the file
+
+`1`：Jump to the beginning of the file
+
+**4.** **文件操作**
+
+`:e file name`：Open another file for editing
+
+`:r file name`：Inserts the contents of another file into the current file
+
+`:sav file name`：Save as specified file name
+
+**5.** **执行外部命令**
+
+`:! command`：Execute external commands such as: `:!ls` list displays the current directory file do the following exercises
+
+#### Complete the following exercise
+
+Create a directory named "/Vi" under the "/root" directory:`mkdir /Vi`
+
+Go to the "/Vi" directory: `cd /Vi`
+
+Copy the "/etc/systemd/system. conf" file to the "/Vi" directory: `cp /etc/systemd/system.conf /Vi/`
+
+Run the Vi command to open the **system.conf** file in "/Vi": `vim /Vi/system.conf`
+
+Set line number: `:set nu`
+
+Move the cursor to that line: `17:<enter>`
+
+Copy the line content: `yy`
+
+Move the cursor to the beginning of the last line: `G`
+
+Paste and copy the contents of the row: `p`
+
+Undo the previous action: `u`
+
+Move the cursor to the end of the last line: `$`
+
+Delete the row: `dd`
+
+Save but do not exit: `:w(Bottom line pattern)`
+
+Move the cursor to the first line: `1G`
+
+Type "`Hello,this is Vi world!`" in Insert mode: **Press `i` and type "`Hello,this is Vi world!`" (Insert mode)**
+
+Return to command mode: **Esc**
+
+Find down string “`DefaultLimitNOFILE=`” : `/ DefaultLimitNOFILE=(command line mode)`
+
+Look up the string again “LogLevel=” : `? LogLevel=`
+
+Save the file but do not exit: `:w`
+
+Forcibly exit Vi without saving the disk: `:q!(Bottom line pattern)`
+
+### （3）**The use of the GCC editor**
 
 **1）**. **The GCC compilation process**
 
@@ -103,7 +266,7 @@ It is mainly divided into four processes: preprocessing, compilation, compilatio
 
 **2**）. **GCC to compile the command**
 
-First create a hello.c file with Vi, type "`vi hello.c`", press “i” to enter the insertion mode, write the program, edit the save disk, the program source code is as follows:
+First create a **hello.c** file with Vi, type "`vi hello.c`", press “`i`” to enter the insertion mode, write the program, edit the save disk, the program source code is as follows:
 
 ![](assets/图片5.png)
 
@@ -142,7 +305,7 @@ Only do the link operation, will. The o file is linked to generate the final exe
 |     -L      |                指定链接时库文件目录                |
 | -l(L的小写) |                指定链接哪一个库文件                |
 
-For example, use the “-I” parameter to specify the header file directory
+For example, use the “`-I`” parameter to specify the header file directory
 
 The header file directory is the current directory
 
@@ -180,15 +343,15 @@ It is not difficult to find the following errors in the code:
 
 \> Main function calls the return statement return value in a function with no return value.
 
-When the GCC compiles the source code that does not meet the ANSI / ISOC language standard, with the "-pedantic" option, where the extended syntax is used generates a warning message.
+When the GCC compiles the source code that does not meet the ANSI / ISOC language standard, with the "`-pedantic`" option, where the extended syntax is used generates a warning message.
 
 ![](assets/图片9.png)
 
-And“-Wall” enables the GCC to generate more warnings:
+And“`-Wall`” enables the GCC to generate more warnings:
 
 ![](assets/图片10.png)
 
-### **（4**）The use of the GDB basic commands
+### （4）**The use of the GDB basic commands**
 
 1).Eit to Vim and enter “`vim greet.c`”
 
@@ -236,10 +399,10 @@ And“-Wall” enables the GCC to generate more warnings:
 
 **Experiment Objectives**
 
-  	* Master the use of Vi editor to edit C language source code files.
-  	* Learn how to manually write Makefile files to automate the compilation process.
-  	* Understand and practice using the Make tool to compile projects.
-  	* Explore the use of automatic generation tools.
+- Master the use of Vi editor to edit C language source code files.
+- Learn how to manually write Makefile files to automate the compilation process.
+- Understand and practice using the Make tool to compile projects.
+- Explore the use of automatic generation tools.
 
 **Experiment Environment**
 
@@ -254,14 +417,15 @@ And“-Wall” enables the GCC to generate more warnings:
 Step 1: Edit the Source Code
 
 - Open the terminal: Start the Linux terminal.
+
 - Create and edit the hello.c file:
 
-1. - Enter the command `vi hello.c` to open or create the hello.c file.
-   - In the Vi editor, enter the following C language code:
+  * Enter the command `vi hello.c` to open or create the hello.c file.
 
-   ![](assets/图片16.png)
+  - In the Vi editor, enter the following C language code:
+  - ![](assets/图片16.png)
 
-1. - Press the "Esc" key to exit insert mode, then type “ `:wq` ” to save and exit the Vi editor.
+  * Press the "**Esc**" key to exit insert mode, then type “ `:wq` ” to save and exit the Vi editor.
 
  ![](assets/图片17.png)
 
@@ -269,9 +433,11 @@ Step 2: Manually Write the Makefile
 
 - Create the Makefile file:
 
-1. - Enter the command “`vi Makefile`”  to create or edit the Makefile file.
-   - In the Vi editor, enter the following content:
-   - Save and exit the Vi editor.
+  * Enter the command “`vi Makefile`”  to create or edit the Makefile file.
+
+  - In the Vi editor, enter the following content:
+
+  - Save and exit the Vi editor.
 
 ![](assets/图片18.png)
 
@@ -279,9 +445,11 @@ Step 3: Compile the Project Using Make
 
 - Compile the project in the terminal:
 
-1. - Enter the command “`make`”  and press Enter.
-   - Observe the output to confirm whether the hello executable file and hello.o object file      were successfully generated.
-   - Run the program by entering the command “`./hello`” and check if the output is “Hello, Make!.”
+  * Enter the command “`make`”  and press **Enter**.
+
+  - Observe the output to confirm whether the "hello" executable file and "hello.o" object file were successfully generated.
+
+  - Run the program by entering the command “`./hello`” and check if the output is “Hello, Make!.”
 
 ![](assets/图片19.png)
 
@@ -293,7 +461,7 @@ Step 4: Use Automatic Generation Tools to Generate Makefile
 
 ![](assets/图片20.jpg)
 
-### **(6)** **Familiar with the CodeBlocks integrated development environment**
+### （6）**Familiar with the CodeBlocks integrated development environment**
 
 1). Install the Code:: Blocks
 
@@ -305,15 +473,15 @@ After installation, open Code:: Blocks and you will see an intuitive user interf
 
 3). Create and manage the projects
 
-In Code:: Blocks, you can organize and manage the code by creating projects. Click File-> New-> Project..., select a project type (such as Console application), and create the project following the wizard instructions. After the creation is complete, you can see the project structure and files list in the Project Browser.
+In Code:: Blocks, you can organize and manage the code by creating projects. Click "**File-> New-> Project...**", select a project type (such as Console application), and create the project following the wizard instructions. After the creation is complete, you can see the project structure and files list in the Project Browser.
 
 4). Written and compiled the code
 
-Write the code in the editor window, and after saving it, you can compile the project either by clicking the "Build and run" button on the toolbar or by pressing the shortcut key (such as F9). After a successful compilation, you can see the compilation information in the log window.
+Write the code in the editor window, and after saving it, you can compile the project either by clicking the "**Build and run**" button on the toolbar or by pressing the shortcut key (such as **F9**). After a successful compilation, you can see the compilation information in the log window.
 
 5). Debug code
 
-Code:: Blocks has powerful debugging capabilities built in to help you find and resolve errors in your code. To debug the code, you first need to set the breakpoint (right-click in the code line number area and select "Toggle breakpoint"). Then, click the "Debug" button on the toolbar or press the shortcut key (such as F8) to start debugging. During debugging you can view variable values, single step execution code, in and out functions etc.
+Code:: Blocks has powerful debugging capabilities built in to help you find and resolve errors in your code. To debug the code, you first need to set the breakpoint (right-click in the code line number area and select "**Toggle breakpoint**"). Then, click the "**Debug**" button on the toolbar or press the shortcut key (such as **F8**) to start debugging. During debugging you can view variable values, single step execution code, in and out functions etc.
 
 6). Practical skills
 
