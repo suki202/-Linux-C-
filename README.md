@@ -566,3 +566,7 @@ Code:: Blocks has powerful debugging capabilities built in to help you find and 
 
 + Establishment and specification of the repository and catalogs
 + Use markdown syntax to consolidate and edit files
+
+## Please click [here](https://github.com/Bier2004/common-commands-in-Linux) to the original repository
+
++ <https://github.com/suki202/-Linux-C-.git>
